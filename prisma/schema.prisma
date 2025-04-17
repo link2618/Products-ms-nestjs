@@ -30,3 +30,4 @@ model Product {
 // npx prisma init
 // npx prisma migrate dev --name init
 // npm install @prisma/client
+// npx prisma migrate dev --name {name action}
