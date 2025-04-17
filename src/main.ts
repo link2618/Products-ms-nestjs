@@ -2,6 +2,7 @@ import { NestFactory } from '@nestjs/core';
 import { Logger, ValidationPipe } from '@nestjs/common';
 
 import { AppModule } from './app.module';
+import { envs } from './config';
 
 async function bootstrap() {
     const logger = new Logger('Main');
@@ -15,6 +16,7 @@ async function bootstrap() {
         }),
     );
 
-    await app.listen(4000);
+    await app.listen(envs.port);
+    logger.log(`Products Microservice running on port ${envs.port}`);
 }
 bootstrap();
